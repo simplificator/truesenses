@@ -2,7 +2,7 @@ module Truesenses
   class Config
     attr_reader :password, :username, :protocol
     def initialize(options)
-      p options
+      options = options.stringify_keys
       @password = options['password']
       @username = options['username']
       @protocol = options['protocol'] || :http

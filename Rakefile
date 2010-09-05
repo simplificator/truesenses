@@ -10,8 +10,8 @@ begin
     gem.email = "info@simplificator.com"
     gem.homepage = "http://github.com/simplificator/truesenses"
     gem.authors = ["pascalbetz"]
-    gem.add_dependency 'httpparty', '>= 0'
-    gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
+    gem.add_dependency 'httparty', '>=0.6.1'
+    #gem.add_development_dependency "thoughtbot-shoulda", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
