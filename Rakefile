@@ -5,7 +5,7 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "truesenses"
-    gem.summary = %Q{implementation of the http api for truesenses.com SMS gateway}
+    gem.summary = %Q{implementation of the api for truesenses.com SMS gateway}
     gem.description = %Q{implementation of the http/https api for truesenses.com SMS gateway}
     gem.email = "info@simplificator.com"
     gem.homepage = "http://github.com/simplificator/truesenses"

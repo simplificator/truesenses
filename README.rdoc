@@ -1,9 +1,40 @@
 = truesenses
 
-Description goes here.
+A implementation of the truesenses HTTP/HTTPS API for sending SMS.
+Register at truesenses.com and buy some credits.
+
+== Install
+ gem install truesenses
+
+== Notes
+Not all API methods are implemented (i.e. delivery reports)
+Multiple recipients are not supported (to allow for better error reports)
+
+== How to use
+
+ require 'rubygems'
+ require 'truesenses'
+
+ include Truesenses
+ # you need a config which specifies at least username/password
+ config = Config.new(:username => 'ABCDE', :password => 'defgh', :prototcol => :http, :deliver => false)
+ # or
+ config = Config.load(File.join(RAILS_ROOT, 'config', 'truesenses.yml'), RAILS_ENV)
+
+ # then you can create the gateway object
+ gateway = SMSGateway.new(config)
+
+ # you can query the remaining credits
+ gateway.credits_left
+
+ # or send text messages (of course...)
+ # all response codes but 01 will trigger an exception
+ id = gateway.send_text_message('Your message', '+41987654321', :origin => 'ABCD')
+
+
 
 == Note on Patches/Pull Requests
- 
+
 * Fork the project.
 * Make your feature addition or bug fix.
 * Add tests for it. This is important so I don't break it in a
@@ -14,4 +45,4 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2010 pascalbetz. See LICENSE for details.
+Copyright (c) 2010 simplificator. See LICENSE for details.
