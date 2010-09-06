@@ -1,0 +1,12 @@
+production:
+  username: ABCDE
+  password: something
+  protocol: :https
+  origin: XYZ
+  deliver: true
+test:
+  username: ABCDE
+  password: something
+  protocol: :https
+  origin: XYZ
+  deliver: false
